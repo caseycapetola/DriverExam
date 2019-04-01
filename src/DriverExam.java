@@ -1,9 +1,13 @@
-
+/**
+ * 
+ * @author Casey Capetola
+ *
+ */
 public class DriverExam 
 {
 	private char[] correctAnswers;
 	
-	public Answers(char[] answers)
+	public DriverExam(char[] answers)
 	{
 		correctAnswers = answers;
 	}
@@ -47,7 +51,7 @@ public class DriverExam
 	
 	public int[] questionsMissed(char[] studentAnswers)
 	{
-		int[] questionsMissed;
+		int[] questionsMissed = null;
 		int arrSize =  0;
 		for(int i=0; i<correctAnswers.length; i++)
 		{
@@ -55,9 +59,10 @@ public class DriverExam
 			{
 				arrSize++;
 				questionsMissed = new int[arrSize];
-				questionsMissed[0] = i+1;
+				questionsMissed[arrSize-1] = i+1;
 				
 			}
 		}
+		return questionsMissed;
 	}
 }
